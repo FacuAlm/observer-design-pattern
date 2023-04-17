@@ -1,0 +1,16 @@
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches: [master]
+
+jobs:
+  Jest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Instalando Dependencias
+        run: npm install
+      - name: Ejecutando Tests del TP N1
+        run: npm test CarritoTest.test.ts
